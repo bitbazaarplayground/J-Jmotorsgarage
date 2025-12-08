@@ -4,18 +4,23 @@ import Contacto from "./pages/Contacto";
 import Home from "./pages/Home";
 import Servicios from "./pages/Servicios";
 import Ubicacion from "./pages/Ubicacion";
+import LocalBusinessSchema from "./seo/LocalBusinessSchema";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/servicios" element={<Servicios />} />
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path="/ubicacion" element={<Ubicacion />} />
-        <Route path="/sobre-nosotros" element={<About />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <LocalBusinessSchema />
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/servicios" element={<Servicios />} />
+          <Route path="/contacto" element={<Contacto />} />
+          <Route path="/ubicacion" element={<Ubicacion />} />
+          <Route path="/sobre-nosotros" element={<About />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

@@ -1,55 +1,94 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   const whatsappLink =
-    "https://wa.me/34600111222?text=Hola,+quiero+pedir+información";
+    "https://wa.me/34711207067?text=Hola,%20quiero%20información%20sobre%20mi%20coche";
+  const heroImage =
+    "https://images.pexels.com/photos/6870323/pexels-photo-6870323.jpeg?auto=compress&cs=tinysrgb&w=1600";
 
   return (
-    <section className="min-h-screen bg-dark text-white flex items-center pt-20 w-full">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-        {/* LEFT SIDE */}
+    <section className="relative bg-black text-white overflow-hidden pt-28 pb-20 md:pt-32">
+      {/* BACKGROUND IMAGE + GRADIENT OVERLAY */}
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Taller mecánico moderno"
+          className="w-full h-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/30" />
+      </div>
+
+      {/* CONTENT */}
+      <div className="relative max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-center gap-10">
+        {/* TEXT BLOCK */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
+          className="w-full lg:w-1/2"
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
-            Tu taller de confianza en{" "}
-            <span className="text-primary">Castellón</span>
-          </h1>
-
-          <p className="mt-5 text-lg text-gray-300">
-            Mecánica, diagnosis y mantenimiento profesional para tu vehículo.
+          <p className="uppercase tracking-[0.25em] text-xs text-primary mb-4">
+            Taller mecánico en Castellón
           </p>
 
-          <div className="mt-8 flex space-x-4">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+            Tu taller de confianza en{" "}
+            <span className="text-primary">Castellón</span>.
+          </h1>
+
+          <p className="text-gray-300 text-sm md:text-base max-w-xl mb-8">
+            Mantenimiento, reparación y diagnosis electrónica con un trato
+            profesional, cercano y transparente. Cuidamos tu coche como si fuera
+            nuestro.
+          </p>
+
+          {/* CTA BUTTONS */}
+          <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={whatsappLink}
-              className="bg-primary px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
+              target="_blank"
+              className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition text-sm md:text-base text-center"
             >
-              WhatsApp
+              Pedir información por WhatsApp
             </a>
 
-            <a
-              href="tel:+34600111222"
-              className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition font-semibold"
+            <Link
+              to="/servicios"
+              className="border border-white/70 px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition text-sm md:text-base text-center"
             >
-              Llamar
-            </a>
+              Ver servicios
+            </Link>
           </div>
+
+          {/* SMALL TRUST TEXT */}
+          <p className="text-xs text-gray-400 mt-4">
+            Revisiones, frenos, suspensión, diagnosis y más. Pide cita sin
+            compromiso.
+          </p>
         </motion.div>
 
-        {/* RIGHT SIDE IMAGE */}
+        {/* DECORATIVE IMAGE AREA (DESKTOP-ONLY EMPHASIS) */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="w-full lg:w-1/2 hidden md:block"
         >
-          <img
-            src="https://images.pexels.com/photos/4489732/pexels-photo-4489732.jpeg?auto=compress&cs=tinysrgb&w=1500"
-            alt="Mecánico trabajando en un coche"
-            className="rounded-lg shadow-lg object-cover w-full h-[400px] md:h-[500px]"
-          />
+          <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/5 backdrop-blur-sm">
+            <img
+              src={heroImage}
+              alt="Interior del taller J&J Motors Garage"
+              className="w-full h-full object-cover"
+            />
+
+            {/* Small badge */}
+            <div className="absolute bottom-4 left-4 bg-black/80 px-4 py-2 rounded-lg border border-white/10">
+              <p className="text-xs text-gray-300">
+                Mecánica general · Diagnosis electrónica · Frenos y suspensión
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

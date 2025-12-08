@@ -13,8 +13,8 @@ export default function Contacto() {
   return (
     <>
       <SEO
-        title="Contacto y Ubicación | J&J Motors Garage Castellón"
-        description="Contacta con J&J Motors Garage. Taller mecánico en Castellón. Teléfono, WhatsApp, dirección, horario y cómo llegar."
+        title="Contacto | Taller Mecánico en Castellón | WhatsApp, Teléfono y Dirección"
+        description="Contacta con J&J Motors Garage en Castellón. Teléfono, WhatsApp, horario y dirección. Resolvemos cualquier duda sobre tu vehículo. Taller mecánico en Castellón. Teléfono, WhatsApp, dirección, horario y cómo llegar."
         canonical="/contacto"
       />
 

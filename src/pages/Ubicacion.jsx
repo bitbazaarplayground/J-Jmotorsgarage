@@ -5,12 +5,6 @@ import Navbar from "../components/Navbar";
 import SEO from "../seo/SEO";
 
 export default function Ubicacion() {
-  <SEO
-    title="Dónde Estamos | Taller en Castellón | J&J Motors Garage"
-    description="Encuentra nuestro taller en Av. de Europa, 217, Castellón. Acceso fácil, amplio, con posibilidad de aparcar. Ver en Google Maps."
-    canonical="/ubicacion"
-  />;
-
   const embedMap =
     "https://www.google.com/maps?q=Av.+de+Europa,+217,+12006+Castell%C3%B3n+de+la+Plana,+Castell%C3%B3n&output=embed";
 
@@ -22,8 +16,13 @@ export default function Ubicacion() {
 
   return (
     <>
-      <Navbar />
+      <SEO
+        title="Taller Mecánico en Castellón | Ubicación y Cómo Llegar | J&J Motors Garage"
+        description="Visítanos en Av. de Europa 217, Castellón. Taller de fácil acceso con aparcamiento en la entrada. Cómo llegar, horario y contacto. Pide cita online o por WhatsApp."
+        canonical="/ubicacion"
+      />
 
+      <Navbar />
       {/* HERO */}
       <section className="pt-32 pb-16 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -41,7 +40,6 @@ export default function Ubicacion() {
           </p>
         </div>
       </section>
-
       {/* MAP & INFO */}
       <section className="bg-zinc-950 py-20 text-white">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
@@ -113,7 +111,6 @@ export default function Ubicacion() {
           </motion.div>
         </div>
       </section>
-
       {/* OPTIONAL PARKING / ACCESS INFO */}
       <section className="bg-black text-gray-300 py-16">
         <div className="max-w-7xl mx-auto px-6 text-center md:text-left">
@@ -129,7 +126,6 @@ export default function Ubicacion() {
           </p>
         </div>
       </section>
-
       <Footer />
     </>
   );

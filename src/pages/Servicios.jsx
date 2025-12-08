@@ -7,10 +7,19 @@ import {
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-import Footer from "../Components/Footer";
+import FAQ from "../components/FAQ";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import FAQSchema from "../seo/FAQSchema";
+import SEO from "../seo/SEO";
 
 export default function Servicios() {
+  <SEO
+    title="Servicios de Mecánica en Castellón | J&J Motors Garage"
+    description="Reparación de frenos, suspensión, diagnosis electrónica, mantenimiento y más. Taller profesional en Castellón con amplia experiencia."
+    canonical="/servicios"
+  />;
+
   const whatsappNumber = "34711207067";
   const whatsappBase = `https://wa.me/${whatsappNumber}?text=Hola,+quiero+información+sobre+`;
 
@@ -56,6 +65,7 @@ export default function Servicios() {
   return (
     <>
       <Navbar />
+      <FAQSchema />
 
       {/* HERO */}
       <section className="pt-32 pb-16 bg-black text-white">
@@ -126,6 +136,7 @@ export default function Servicios() {
           })}
         </div>
       </section>
+      <FAQ />
 
       <Footer />
     </>

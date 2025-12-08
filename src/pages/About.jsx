@@ -2,8 +2,14 @@ import { motion } from "framer-motion";
 import tallerImg from "../assets/about/taller.jpg";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-
+import SEO from "../seo/SEO";
 export default function About() {
+  <SEO
+    title="Sobre Nosotros | J&J Motors Garage Castellón"
+    description="Taller mecánico en Castellón con años de experiencia, pasión por el motor y un servicio profesional, transparente y cercano."
+    canonical="/sobre-nosotros"
+  />;
+
   return (
     <>
       <Navbar />
@@ -35,7 +41,7 @@ export default function About() {
           {/* IMAGE */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             className="rounded-xl overflow-hidden shadow-lg border border-white/10"
           >
@@ -49,7 +55,7 @@ export default function About() {
           {/* TEXT BLOCK */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             className="flex flex-col justify-center"
           >

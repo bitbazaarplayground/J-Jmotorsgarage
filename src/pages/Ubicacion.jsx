@@ -1,9 +1,16 @@
 import { ClockIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-import Footer from "../Components/Footer";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import SEO from "../seo/SEO";
 
 export default function Ubicacion() {
+  <SEO
+    title="Dónde Estamos | Taller en Castellón | J&J Motors Garage"
+    description="Encuentra nuestro taller en Av. de Europa, 217, Castellón. Acceso fácil, amplio, con posibilidad de aparcar. Ver en Google Maps."
+    canonical="/ubicacion"
+  />;
+
   const embedMap =
     "https://www.google.com/maps?q=Av.+de+Europa,+217,+12006+Castell%C3%B3n+de+la+Plana,+Castell%C3%B3n&output=embed";
 

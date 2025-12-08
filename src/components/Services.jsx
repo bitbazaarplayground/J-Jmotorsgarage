@@ -49,6 +49,7 @@ export default function Services() {
   return (
     <section className="bg-black py-20 text-white">
       <div className="max-w-7xl mx-auto px-6">
+        {/* TITLE */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,21 +59,32 @@ export default function Services() {
           Nuestros <span className="text-primary">Servicios</span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-10">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-zinc-900 p-6 rounded-xl shadow-md hover:shadow-primary/40 transition-shadow border border-white/5"
-            >
-              <service.icon className="h-12 w-12 text-primary mb-4" />
+        <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-10">
+          {services.map((service, index) => {
+            const Icon = service.icon;
 
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-gray-400 text-sm">{service.description}</p>
-            </motion.div>
-          ))}
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative bg-zinc-900/60 p-6 rounded-xl border border-white/10 shadow-lg overflow-hidden backdrop-blur-sm group hover:bg-zinc-900/80 transition"
+              >
+                {/* Decorative Background */}
+                <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.06] bg-gradient-to-br from-zinc-800 to-black" />
+
+                <div className="relative">
+                  <Icon className="h-10 w-10 text-primary mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">{service.description}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

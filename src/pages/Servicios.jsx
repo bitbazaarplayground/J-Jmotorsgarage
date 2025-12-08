@@ -14,12 +14,6 @@ import FAQSchema from "../seo/FAQSchema";
 import SEO from "../seo/SEO";
 
 export default function Servicios() {
-  <SEO
-    title="Servicios de Mecánica en Castellón | J&J Motors Garage"
-    description="Reparación de frenos, suspensión, diagnosis electrónica, mantenimiento y más. Taller profesional en Castellón con amplia experiencia."
-    canonical="/servicios"
-  />;
-
   const whatsappNumber = "34711207067";
   const whatsappBase = `https://wa.me/${whatsappNumber}?text=Hola,+quiero+información+sobre+`;
 
@@ -64,9 +58,14 @@ export default function Servicios() {
 
   return (
     <>
-      <Navbar />
+      <SEO
+        title="Servicios de Mecánica en Castellón | Frenos, Aceite, Neumáticos y Diagnosis"
+        description="Reparación de frenos, cambio de aceite, suspensión, neumáticos y diagnosis electrónica en Castellón. Mecánicos expertos, servicio rápido y transparente. Taller profesional en Castellón con amplia experiencia."
+        canonical="/servicios"
+      />
+      ;
       <FAQSchema />
-
+      <Navbar />
       {/* HERO */}
       <section className="pt-32 pb-16 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -85,7 +84,6 @@ export default function Servicios() {
           </p>
         </div>
       </section>
-
       {/* SERVICES GRID */}
       <section className="bg-zinc-950 py-20 text-white">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
@@ -137,7 +135,6 @@ export default function Servicios() {
         </div>
       </section>
       <FAQ />
-
       <Footer />
     </>
   );

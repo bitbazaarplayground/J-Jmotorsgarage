@@ -4,16 +4,15 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import SEO from "../seo/SEO";
 export default function About() {
-  <SEO
-    title="Sobre Nosotros | J&J Motors Garage Castellón"
-    description="Taller mecánico en Castellón con años de experiencia, pasión por el motor y un servicio profesional, transparente y cercano."
-    canonical="/sobre-nosotros"
-  />;
-
   return (
     <>
-      <Navbar />
+      <SEO
+        title="Sobre Nosotros | Taller Mecánico de Confianza en Castellón | J&J Motors Garage"
+        description="Conócenos. Taller mecánico en Castellón con años de experiencia en mantenimiento, reparación y diagnosis electrónica. Honestidad, profesionalidad y pasión por el motor."
+        canonical="/sobre-nosotros"
+      />
 
+      <Navbar />
       {/* HERO SECTION */}
       <section className="pt-32 pb-16 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -34,7 +33,6 @@ export default function About() {
           </p>
         </div>
       </section>
-
       {/* IMAGE + STORY SECTION */}
       <section className="bg-zinc-950 py-20 text-white">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
@@ -85,7 +83,6 @@ export default function About() {
           </motion.div>
         </div>
       </section>
-
       {/* VALUES SECTION */}
       <section className="bg-black py-16 text-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -124,7 +121,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       <Footer />
     </>
   );

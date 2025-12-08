@@ -38,11 +38,6 @@ export default function Footer() {
                 Contacto
               </a>
             </li>
-            <li>
-              <a href="/ubicacion" className="hover:text-primary transition">
-                Ubicación
-              </a>
-            </li>
           </ul>
         </div>
 
@@ -64,8 +59,11 @@ export default function Footer() {
 
             <li className="flex items-start gap-3">
               <EnvelopeIcon className="h-5 w-5 text-primary mt-1" />
-              <a href="mailto:info@jjmotors.es" className="hover:text-primary">
-                info@jjmotors.es
+              <a
+                href="mailto:jjmotorsgarage@gmail.com"
+                className="hover:text-primary"
+              >
+                jjmotorsgarage@gmail.com
               </a>
             </li>
           </ul>

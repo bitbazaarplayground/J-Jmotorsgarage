@@ -37,17 +37,18 @@ export default function WhyChooseUs() {
   return (
     <section className="bg-black text-white py-20">
       <div className="max-w-7xl mx-auto px-6">
-        {/* TITLE */}
+        {/* ---------- TITLE (Flash-free, fade only) ---------- */}
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={false}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
           className="text-4xl font-bold text-center mb-12"
         >
           ¿Por qué <span className="text-primary">Elegirnos</span>?
         </motion.h2>
 
-        {/* GRID */}
+        {/* ---------- GRID ---------- */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {items.map((item, index) => {
             const Icon = item.icon;
@@ -55,10 +56,11 @@ export default function WhyChooseUs() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                // FLASH-FREE: no y-movement, no initial opacity reset
+                initial={false}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="relative p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md shadow-lg hover:bg-white/10 transition group"
               >
                 {/* ICON */}

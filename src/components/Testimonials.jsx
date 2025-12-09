@@ -41,14 +41,12 @@ export default function Testimonials() {
       next();
     }, 7000);
 
-    // Cleanup on unmount or when index changes
     return () => clearInterval(timerRef.current);
   }, [index]);
 
-  // Reset timer when user clicks manually
   const handleUserClick = (action) => {
-    clearInterval(timerRef.current); // stop current timer
-    action(); // run prev or next
+    clearInterval(timerRef.current);
+    action();
   };
 
   const t = testimonials[index];
@@ -56,28 +54,32 @@ export default function Testimonials() {
   return (
     <section className="bg-black text-white py-20">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        {/* TITLE */}
+        {/* ---------- TITLE (Updated: opacity only) ---------- */}
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-4xl font-bold mb-12"
         >
           Opiniones de <span className="text-primary">nuestros clientes</span>
         </motion.h2>
 
-        {/* CARD */}
+        {/* ---------- CARD (Updated: opacity only) ---------- */}
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
           className="relative bg-white/5 backdrop-blur-md p-10 rounded-2xl border border-white/10 shadow-xl"
         >
-          {/* PHOTO */}
+          {/* PHOTO (added lazy + async for mobile performance) */}
           <img
             src={t.photo}
             alt={t.name}
+            loading="lazy"
+            decoding="async"
+            style={{ contentVisibility: "auto" }}
             className="mx-auto w-20 h-20 rounded-full object-cover border-2 border-primary mb-4"
           />
 

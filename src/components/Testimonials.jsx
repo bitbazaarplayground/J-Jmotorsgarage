@@ -52,7 +52,7 @@ export default function Testimonials() {
   const t = testimonials[index];
 
   return (
-    <section className="bg-black text-white py-20">
+    <section className="bg-black text-white py-9">
       <div className="max-w-4xl mx-auto px-6 text-center">
         {/* ---------- TITLE (Updated: opacity only) ---------- */}
         <motion.h2

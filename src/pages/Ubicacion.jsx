@@ -18,13 +18,14 @@ export default function Ubicacion() {
     <>
       <SEO
         title="Taller Mecánico en Castellón | Ubicación y Cómo Llegar | J&J Motors Garage"
-        description="Visítanos en Av. de Europa 217, Castellón. Taller de fácil acceso con aparcamiento en la entrada. Cómo llegar, horario y contacto. Pide cita online o por WhatsApp."
+        description="Visítanos en Av. de Europa 217, Castellón. Taller de fácil acceso con aparcamiento en la entrada. Cómo llegar, horario y contacto."
         canonical="/ubicacion"
       />
 
       <Navbar />
-      {/* HERO */}
-      <section className="pt-32 pb-16 bg-black text-white">
+
+      {/* ---------- HERO ---------- */}
+      <section className="pt-28 pb-9 md:pt-32 md:pb-16 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -34,21 +35,24 @@ export default function Ubicacion() {
           >
             Nuestra <span className="text-primary">Ubicación</span>
           </motion.h1>
+
           <p className="text-gray-400 max-w-2xl">
             Encuéntranos en Castellón de la Plana. Acceso fácil, zona tranquila
             y bien comunicada.
           </p>
         </div>
       </section>
-      {/* MAP & INFO */}
-      <section className="bg-zinc-950 py-20 text-white">
+
+      {/* ---------- MAP + INFO ---------- */}
+      <section className="bg-zinc-950 py-9 md:py-20 text-white">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
           {/* MAP */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="rounded-xl overflow-hidden border border-white/10 shadow-lg h-[450px]"
+            className="rounded-xl overflow-hidden border border-white/10 shadow-lg h-[350px] md:h-[450px]"
           >
             <iframe
               title="Mapa J&J Motors Garage"
@@ -64,7 +68,8 @@ export default function Ubicacion() {
           {/* CONTACT INFO */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="flex flex-col justify-center"
           >
@@ -111,8 +116,9 @@ export default function Ubicacion() {
           </motion.div>
         </div>
       </section>
-      {/* OPTIONAL PARKING / ACCESS INFO */}
-      <section className="bg-black text-gray-300 py-16">
+
+      {/* ---------- PARKING INFO ---------- */}
+      <section className="bg-black text-gray-300 py-9 md:py-16">
         <div className="max-w-7xl mx-auto px-6 text-center md:text-left">
           <h3 className="text-2xl font-semibold text-white mb-4">
             Acceso y aparcamiento
@@ -126,6 +132,7 @@ export default function Ubicacion() {
           </p>
         </div>
       </section>
+
       <Footer />
     </>
   );

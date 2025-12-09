@@ -12,24 +12,24 @@ export default function MapSection() {
     "https://www.google.com/maps?q=Av.+de+Europa,+217,+12006+Castell%C3%B3n+de+la+Plana,+Castell%C3%B3n&output=embed";
 
   return (
-    <section className="bg-black py-20 text-white">
+    <section className="bg-black  md:py-9 text-white">
       <div className="max-w-7xl mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center mb-12"
+          className="text-3xl sm:text-4xl font-bold text-center mb-10 md:mb-12"
         >
           Encuéntranos en <span className="text-primary">Castellón</span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-10">
           {/* MAP */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="w-full h-[350px] md:h-[450px] rounded-xl overflow-hidden border border-white/10 shadow-lg"
+            className="w-full h-[300px] sm:h-[350px] md:h-[450px] rounded-xl overflow-hidden border border-white/10 shadow-lg"
           >
             <iframe
               title="Mapa de J&J Motors Garage"
@@ -42,30 +42,30 @@ export default function MapSection() {
             ></iframe>
           </motion.div>
 
-          {/* INFO + CTA */}
+          {/* INFO */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             className="flex flex-col justify-center"
           >
-            <h3 className="text-2xl font-semibold mb-4">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4">
               Información de contacto
             </h3>
 
-            <p className="flex items-center gap-3">
+            <p className="flex items-center gap-3 max-w-[90%] md:max-w-none leading-relaxed">
               <MapPinIcon className="h-6 w-6 text-primary" />
               Av. de Europa, 217, 12006 Castellón de la Plana
             </p>
 
-            <p className="flex items-center gap-3">
+            <p className="flex items-center gap-3 mt-3">
               <PhoneIcon className="h-6 w-6 text-primary" />
               <a href="tel:+34711207067" className="hover:text-primary">
                 +34 711 20 70 67
               </a>
             </p>
 
-            <p className="flex items-center gap-3">
+            <p className="flex items-center gap-3 mt-3">
               <ClockIcon className="h-6 w-6 text-primary" />
               L–V: 8:00–13:30 / 15:00–18:00
             </p>

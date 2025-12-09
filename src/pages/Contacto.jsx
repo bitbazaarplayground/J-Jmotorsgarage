@@ -6,29 +6,26 @@ import SEO from "../seo/SEO";
 import { whatsappMessage } from "../utils/whatsappMessage";
 
 export default function Contacto() {
-  const googleMapsUrl =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3098.73!2d-0.04926!3d39.98571!2m3!1f0!2f0!3f0!";
-  const navigateUrl = "https://maps.app.goo.gl/BuJ8qJc3qJ2K5gdp8";
   const whatsappUrl = whatsappMessage();
 
   return (
     <>
       <SEO
-        title="Contacto | Taller Mecánico en Castellón | WhatsApp, Teléfono y Dirección"
-        description="Contacta con J&J Motors Garage en Castellón. Teléfono, WhatsApp, horario y dirección. Resolvemos cualquier duda sobre tu vehículo. Taller mecánico en Castellón. Teléfono, WhatsApp, dirección, horario y cómo llegar."
+        title="Contacto | Taller Mecánico en Castellón | WhatsApp, Mapa, Teléfono y Dirección"
+        description="Contacta con J&J Motors Garage en Castellón. Teléfono, WhatsApp, horario y dirección. Resolvemos cualquier duda sobre tu vehículo."
         canonical="/contacto"
       />
 
       <Navbar />
 
-      {/* HEADER */}
-      <section className="pt-32 pb-16 bg-black text-white">
+      {/* ---------- HERO ---------- */}
+      <section className="pt-28 pb-9 md:pt-32 md:pb-16 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold"
+            className="text-4xl md:text-5xl font-bold"
           >
             Contacto y <span className="text-primary">Ubicación</span>
           </motion.h1>
@@ -40,33 +37,35 @@ export default function Contacto() {
         </div>
       </section>
 
-      {/* CONTACT INFO + MAP */}
-      <section className="bg-zinc-950 text-white py-20">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 lg:gap-20">
-          {/* MAP (LEFT) */}
+      {/* ---------- CONTACT INFO + MAP ---------- */}
+      <section className="bg-zinc-950 text-white py-9 md:py-20">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20">
+          {/* MAP */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-xl overflow-hidden border border-white/10 shadow-xl"
+            className="rounded-xl overflow-hidden border border-white/10 shadow-xl h-[350px] md:h-[450px]"
           >
             <iframe
               src="https://www.google.com/maps?q=Av.+de+Europa,+217,+12006+Castell%C3%B3n+de+la+Plana,+Castell%C3%B3n&output=embed"
               width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen=""
+              height="100%"
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+              style={{ border: 0 }}
+              allowFullScreen
+              title="Mapa de J&J Motors Garage"
             ></iframe>
           </motion.div>
 
-          {/* CONTACT INFO (RIGHT) */}
+          {/* CONTACT DETAILS */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="pt-4 lg:pt-8 lg:pl-4"
+            className="flex flex-col justify-center"
           >
             <h2 className="text-3xl font-semibold mb-6">
               Información de contacto
@@ -91,7 +90,7 @@ export default function Contacto() {
               </p>
             </div>
 
-            {/* ACTION BUTTONS */}
+            {/* CTA BUTTONS */}
             <div className="mt-8 flex gap-4">
               <a
                 href={whatsappUrl}
@@ -112,8 +111,9 @@ export default function Contacto() {
           </motion.div>
         </div>
       </section>
-      {/* OPTIONAL PARKING / ACCESS INFO */}
-      <section className="bg-black text-gray-300 py-16">
+
+      {/* ---------- PARKING INFO ---------- */}
+      <section className="bg-black text-gray-300 py-9 md:py-16">
         <div className="max-w-7xl mx-auto px-6 text-center md:text-left">
           <h3 className="text-2xl font-semibold text-white mb-4">
             Acceso y aparcamiento

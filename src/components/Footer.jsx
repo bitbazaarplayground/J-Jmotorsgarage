@@ -6,14 +6,15 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-950 text-gray-300 py-12 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+    <footer className="bg-zinc-950 text-gray-300 py-10 md:py-12 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 md:gap-10">
         {/* BRANDING */}
         <div>
           <h3 className="text-2xl font-bold text-white mb-4">
-            J&J Motors Garage
+            J&J Motors <span className="text-primary">Garage</span>
           </h3>
-          <p className="text-gray-400 text-sm leading-relaxed">
+
+          <p className="text-gray-400 text-sm leading-relaxed max-w-[90%] md:max-w-none">
             Taller mecánico profesional en Castellón. Mantenimiento, diagnosis y
             reparaciones de confianza con atención personalizada.
           </p>
@@ -66,12 +67,25 @@ export default function Footer() {
                 jjmotorsgarage@gmail.com
               </a>
             </li>
+            <ul className="space-y-3">
+              <li>
+                <a href="/aviso-legal" className="hover:text-primary">
+                  Aviso Legal
+                </a>
+              </li>
+              <li>
+                <a href="/privacidad" className="hover:text-primary">
+                  Política de Privacidad
+                </a>
+              </li>
+            </ul>
           </ul>
         </div>
       </div>
 
       {/* COPYRIGHT */}
-      <div className="text-center text-sm text-gray-500 mt-10 border-t border-white/10 pt-6">
+
+      <div className="text-center text-sm text-gray-500 mt-8 md:mt-10 border-t border-white/10 pt-6">
         © {new Date().getFullYear()} J&J Motors Garage. Todos los derechos
         reservados.
       </div>

@@ -35,7 +35,7 @@ const items = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-black text-white py-20">
+    <section className="bg-black text-white py-9 md:py-20">
       <div className="max-w-7xl mx-auto px-6">
         {/* ---------- TITLE (Flash-free, fade only) ---------- */}
         <motion.h2

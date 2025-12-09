@@ -8,8 +8,6 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import LocalBusinessSchema from "../seo/LocalBusinessSchema";
 import OrganizationSchema from "../seo/OrganizationSchema";
 import SEO from "../seo/SEO";
-import AvisoLegal from "./AvisoLegal";
-import Privacidad from "./Privacidad";
 
 export default function Home() {
   return (
@@ -29,8 +27,7 @@ export default function Home() {
       <WhyChooseUs />
       <Testimonials />
       <MapSection />
-      <AvisoLegal />
-      <Privacidad />
+
       <Footer />
     </>
   );

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="bg-zinc-950 text-gray-300 py-10 md:py-12 border-t border-white/10">
@@ -21,35 +23,38 @@ export default function Footer() {
 
           <ul className="grid grid-cols-2 gap-y-3 text-sm">
             <li>
-              <a href="/" className="hover:text-primary transition">
+              <Link to="/" className="hover:text-primary transition">
                 Inicio
-              </a>
+              </Link>
             </li>
+
             <li>
-              <a href="/contacto" className="hover:text-primary transition">
+              <Link to="/contacto" className="hover:text-primary transition">
                 Contacto
-              </a>
+              </Link>
             </li>
+
             <li>
-              <a href="/servicios" className="hover:text-primary transition">
+              <Link to="/servicios" className="hover:text-primary transition">
                 Servicios
-              </a>
+              </Link>
             </li>
+
             <li>
-              <a href="/aviso-legal" className="hover:text-primary transition">
+              <Link to="/aviso-legal" className="hover:text-primary transition">
                 Aviso Legal
-              </a>
+              </Link>
             </li>
+
             <li className="col-span-2">
-              <a href="/privacidad" className="hover:text-primary transition">
+              <Link to="/privacidad" className="hover:text-primary transition">
                 Política de Privacidad
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
 
-        {/* OPTIONAL: SMALL CONTACT OR REMOVE COMPLETELY */}
-        {/* If you want NOTHING here, just delete this entire block */}
+        {/* SOCIAL / THIRD COLUMN */}
         <div className="hidden md:block">
           <h4 className="text-lg font-semibold text-white mb-4">Síguenos</h4>
           <p className="text-gray-500 text-sm">Próximamente redes sociales…</p>

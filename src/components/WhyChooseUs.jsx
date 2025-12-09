@@ -37,40 +37,45 @@ export default function WhyChooseUs() {
   return (
     <section className="bg-black text-white py-9 md:py-20">
       <div className="max-w-7xl mx-auto px-6">
-        {/* ---------- TITLE (Flash-free, fade only) ---------- */}
+        {/* TITLE */}
         <motion.h2
           initial={false}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center mb-12"
+          className="text-3xl sm:text-4xl font-bold text-center mb-10 md:mb-12"
         >
           ¿Por qué <span className="text-primary">Elegirnos</span>?
         </motion.h2>
 
-        {/* ---------- GRID ---------- */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        {/* GRID */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
           {items.map((item, index) => {
             const Icon = item.icon;
 
             return (
               <motion.div
                 key={index}
-                // FLASH-FREE: no y-movement, no initial opacity reset
                 initial={false}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="relative p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md shadow-lg hover:bg-white/10 transition group"
+                className="relative bg-zinc-900/60 p-6 rounded-xl border border-white/10 shadow-lg overflow-hidden backdrop-blur-sm hover:bg-zinc-900/80 transition group"
               >
-                {/* ICON */}
-                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary/20 border border-primary/30 mb-4 group-hover:bg-primary/30 transition">
-                  <Icon className="h-8 w-8 text-primary" />
-                </div>
+                {/* Decorative background */}
+                <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.06] bg-gradient-to-br from-zinc-800 to-black" />
 
                 {/* CONTENT */}
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-300 text-sm">{item.description}</p>
+                <div className="relative">
+                  <div className="mb-4">
+                    <Icon className="h-10 w-10 text-primary" />
+                  </div>
+
+                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </motion.div>
             );
           })}

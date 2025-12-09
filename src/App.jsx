@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import About from "./pages/About";
 import AvisoLegal from "./pages/AvisoLegal";
 import Contacto from "./pages/Contacto";
@@ -14,6 +15,7 @@ function App() {
       <LocalBusinessSchema />
 
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/servicios" element={<Servicios />} />

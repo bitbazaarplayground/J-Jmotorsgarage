@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { whatsappMessage } from "../utils/whatsappMessage";
 
 export default function Hero() {
-  const whatsappLink =
-    "https://wa.me/34711207067?text=Hola,%20quiero%20información%20sobre%20mi%20coche";
+  const whatsappLink = whatsappMessage("mi coche");
   const heroImage =
     "https://images.pexels.com/photos/6870323/pexels-photo-6870323.jpeg?auto=compress&cs=tinysrgb&w=1600";
 
@@ -14,18 +14,19 @@ export default function Hero() {
         <img
           src={heroImage}
           alt="Taller mecánico moderno"
+          loading="eager"
+          decoding="async"
           className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/30" />
       </div>
 
       {/* CONTENT */}
-      <div className="relative max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-center gap-10">
-        {/* TEXT BLOCK */}
+      <div className="relative max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-10">
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
+          initial={false}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
           className="w-full lg:w-1/2"
         >
           <p className="uppercase tracking-[0.25em] text-xs text-primary mb-4">
@@ -61,17 +62,15 @@ export default function Hero() {
             </Link>
           </div>
 
-          {/* SMALL TRUST TEXT */}
           <p className="text-xs text-gray-400 mt-4">
             Revisiones, frenos, suspensión, diagnosis y más. Pide cita sin
             compromiso.
           </p>
         </motion.div>
 
-        {/* DECORATIVE IMAGE AREA (DESKTOP-ONLY EMPHASIS) */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={false}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           className="w-full lg:w-1/2 hidden md:block"
         >
@@ -79,10 +78,11 @@ export default function Hero() {
             <img
               src={heroImage}
               alt="Interior del taller J&J Motors Garage"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover"
             />
 
-            {/* Small badge */}
             <div className="absolute bottom-4 left-4 bg-black/80 px-4 py-2 rounded-lg border border-white/10">
               <p className="text-xs text-gray-300">
                 Mecánica general · Diagnosis electrónica · Frenos y suspensión

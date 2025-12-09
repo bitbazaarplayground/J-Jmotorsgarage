@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import SEO from "../seo/SEO";
+import { whatsappMessage } from "../utils/whatsappMessage";
 
 export default function Contacto() {
   const googleMapsUrl =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3098.73!2d-0.04926!3d39.98571!2m3!1f0!2f0!3f0!";
   const navigateUrl = "https://maps.app.goo.gl/BuJ8qJc3qJ2K5gdp8";
-  const whatsappUrl = "https://wa.me/34711207067";
+  const whatsappUrl = whatsappMessage();
 
   return (
     <>
@@ -93,7 +94,7 @@ export default function Contacto() {
             {/* ACTION BUTTONS */}
             <div className="mt-8 flex gap-4">
               <a
-                href="https://wa.me/34711207067"
+                href={whatsappUrl}
                 target="_blank"
                 className="bg-primary px-5 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
               >

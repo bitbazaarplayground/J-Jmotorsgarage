@@ -5,13 +5,26 @@ export default function OrganizationSchema() {
     "@id": "https://jjmotorsgarage.es/#organization",
     name: "J&J Motors Garage",
     url: "https://jjmotorsgarage.es",
-    logo: "https://jjmotorsgarage.es/og-image.jpg",
+    logo: "https://jjmotorsgarage.es/logo.jpg",
     email: "jjmotorsgarage@gmail.com",
     telephone: "+34 711 20 70 67",
+
+    // Recommended by Google for customer service
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+34 711 20 70 67",
+        contactType: "customer service",
+        areaServed: "ES",
+        availableLanguage: ["Spanish"],
+      },
+    ],
+
     sameAs: [
       "https://maps.app.goo.gl/BuJ8qJc3qJ2K5gdp8",
-      // Add Instagram or Facebook if you ever create them
+      // Add Instagram, Facebook, TikTok if created later
     ],
+
     address: {
       "@type": "PostalAddress",
       streetAddress: "Av. de Europa, 217",

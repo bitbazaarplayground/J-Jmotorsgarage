@@ -49,11 +49,12 @@ export default function Services() {
   return (
     <section className="bg-black py-20 text-white">
       <div className="max-w-7xl mx-auto px-6">
-        {/* TITLE */}
+        {/* ---------- TITLE (Flash-free) ---------- */}
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={false}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
           className="text-4xl font-bold text-center mb-12"
         >
           Nuestros <span className="text-primary">Servicios</span>
@@ -66,10 +67,11 @@ export default function Services() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                // ---------- FLASH-FREE ANIMATION ----------
+                initial={false}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="relative bg-zinc-900/60 p-6 rounded-xl border border-white/10 shadow-lg overflow-hidden backdrop-blur-sm group hover:bg-zinc-900/80 transition"
               >
                 {/* Decorative Background */}

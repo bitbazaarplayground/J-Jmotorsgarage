@@ -2,13 +2,14 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/about/logo.JPG";
+import { whatsappMessage } from "../utils/whatsappMessage";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
-  const whatsappLink =
-    "https://wa.me/34711207067?text=Hola,%20quiero%20información";
+  const whatsappLink = whatsappMessage();
 
   // Close menu automatically when route changes
   useState(() => {
@@ -25,7 +26,13 @@ export default function Navbar() {
         className="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-md z-50 border-b border-white/10"
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <h1 className="text-white text-xl font-bold">J&J Motors Garage</h1>
+          <Link to="/">
+            <img
+              src={logo}
+              alt="J&J Motors Garage logo"
+              className="h-12 w-auto object-contain"
+            />
+          </Link>
 
           {/* DESKTOP NAV */}
           <div className="hidden md:flex space-x-8 text-white text-sm font-medium">

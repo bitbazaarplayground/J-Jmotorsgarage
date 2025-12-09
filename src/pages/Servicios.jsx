@@ -19,37 +19,43 @@ export default function Servicios() {
       title: "Mantenimiento general",
       desc: "Incluye cambio de filtros, revisión de niveles, inspección de seguridad y mantenimiento preventivo para asegurar el buen estado del vehículo.",
       icon: WrenchScrewdriverIcon,
-      img: "https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      img: "/img/general.jpg",
+      alt: "Mecánico realizando mantenimiento general en un vehículo",
     },
     {
       title: "Cambio de aceite y filtros",
       desc: "Servicio rápido y eficiente con aceites de alta calidad apropiados para cada tipo de motor.",
       icon: BoltIcon,
-      img: "https://images.pexels.com/photos/13065699/pexels-photo-13065699.jpeg?auto=compress&cs=tinysrgb&w=1500",
+      img: "/img/oil-change.jpg",
+      alt: "Cambio de aceite y filtros realizado en coche en J&J Motors Garage",
     },
     {
       title: "Frenos y suspensión",
       desc: "Reemplazo de pastillas, discos, amortiguadores y otros componentes esenciales para la seguridad del vehículo.",
       icon: TruckIcon,
-      img: "https://images.pexels.com/photos/8986119/pexels-photo-8986119.jpeg?auto=compress&cs=tinysrgb&w=1500",
+      img: "/img/brakes.jpg",
+      alt: "Revisión y reparación de frenos y suspensión en automóvil",
     },
     {
       title: "Diagnosis electrónica",
       desc: "Equipos avanzados para diagnosticar fallos electrónicos, sensores, motor, ABS, airbag y más.",
       icon: Cog6ToothIcon,
-      img: "https://images.pexels.com/photos/12271948/pexels-photo-12271948.jpeg?auto=compress&cs=tinysrgb&w=1500",
+      img: "/img/diagnosis.jpg",
+      alt: "Mecánico realizando diagnosis electrónica con herramienta especializada",
     },
     {
       title: "Neumáticos y alineación",
       desc: "Montaje, equilibrado, alineación de dirección y reparación de pinchazos.",
       icon: AdjustmentsHorizontalIcon,
-      img: "https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=1500",
+      img: "/img/tyres.jpg",
+      alt: "Cambio de neumáticos y alineación de ruedas en el taller",
     },
     {
       title: "Reparaciones de motor",
       desc: "Reparaciones completas de motor, correas, fugas, ruidos o pérdida de potencia.",
       icon: SparklesIcon,
-      img: "https://images.pexels.com/photos/8478244/pexels-photo-8478244.jpeg?auto=compress&cs=tinysrgb&w=1500",
+      img: "/img/engine.jpg",
+      alt: "Mecánico realizando reparación de motor en vehículo",
     },
   ];
 
@@ -57,7 +63,7 @@ export default function Servicios() {
     <>
       <SEO
         title="Servicios de Mecánica en Castellón | Frenos, Aceite, Neumáticos y Diagnosis"
-        description="Reparación de frenos, cambio de aceite, suspensión, neumáticos y diagnosis electrónica en Castellón. Mecánicos expertos, servicio rápido y transparente. Taller profesional en Castellón con amplia experiencia."
+        description="Reparación de frenos, cambio de aceite, suspensión, neumáticos y diagnosis electrónica en Castellón. Mecánicos expertos, servicio rápido y transparente."
         canonical="/servicios"
       />
 
@@ -65,7 +71,7 @@ export default function Servicios() {
       <Navbar />
 
       {/* ---------- HERO ---------- */}
-      <section className="pt-32 pb-16 bg-black text-white">
+      <section className="pt-28 pb-9 md:pt-32 md:pb-16 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.h1
             initial={false}
@@ -85,7 +91,7 @@ export default function Servicios() {
       </section>
 
       {/* ---------- SERVICES GRID ---------- */}
-      <section className="bg-zinc-950 py-20 text-white">
+      <section className="bg-zinc-950 py-9 md:py-20 text-white">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -102,11 +108,11 @@ export default function Servicios() {
                 {/* IMAGE */}
                 <img
                   src={service.img}
-                  alt={service.title}
+                  alt={service.alt}
                   loading="lazy"
                   decoding="async"
                   style={{ contentVisibility: "auto" }}
-                  className="w-full h-56 object-cover"
+                  className="w-full h-40 md:h-56 object-cover"
                   onError={(e) => {
                     e.target.src =
                       "https://images.pexels.com/photos/3806245/pexels-photo-3806245.jpeg?auto=compress&cs=tinysrgb&w=1500";

@@ -1,9 +1,9 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/about/logo.JPG";
 import { whatsappMessage } from "../utils/whatsappMessage";
+import logo from "/img/logo.jpg";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -11,8 +11,7 @@ export default function Navbar() {
 
   const whatsappLink = whatsappMessage();
 
-  // Close menu automatically when route changes
-  useState(() => {
+  useEffect(() => {
     setMobileOpen(false);
   }, [location.pathname]);
 
@@ -104,7 +103,7 @@ export default function Navbar() {
             </button>
 
             {/* MENU LINKS */}
-            <nav className="mt-10 space-y-6 text-lg">
+            <nav className="mt-12 space-y-6 text-lg">
               <Link
                 to="/"
                 className="block hover:text-primary"

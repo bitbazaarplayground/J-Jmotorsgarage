@@ -52,7 +52,7 @@ export default function Servicios() {
     },
     {
       title: "Reparaciones de motor",
-      desc: "Reparaciones completas de motor, correas, fugas, ruidos o pérdida de potencia.",
+      desc: "Reparaciones de motor, correas, fugas, ruidos o pérdida de potencia.",
       icon: SparklesIcon,
       img: "/img/engine.jpg",
       alt: "Mecánico realizando reparación de motor en vehículo",

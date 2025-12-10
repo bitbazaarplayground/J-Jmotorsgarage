@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 const testimonials = [
   {
     name: "Laura M.",
-    photo: "https://randomuser.me/api/portraits/women/44.jpg",
+    photo: "https://randomuser.me/api/portraits/women/24.jpg",
     text: "Un servicio excelente. Me explicaron todo con claridad y me entregaron el coche antes de lo esperado. Muy profesionales.",
     rating: 5,
   },

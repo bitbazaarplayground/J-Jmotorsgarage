@@ -8,7 +8,7 @@ import { Handshake } from "lucide-react";
 
 const items = [
   {
-    title: "Técnicos certificados",
+    title: "Técnicos cualificados",
     description:
       "Profesionales con amplia experiencia en mecánica y diagnosis, garantizando resultados de calidad en cada reparación.",
     icon: ShieldCheckIcon,

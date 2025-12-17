@@ -14,10 +14,7 @@ export default function SEO({ title, description, canonical, image }) {
 
       {/* Meta Description */}
       <Meta name="description" content={description} />
-      <meta
-        name="google-site-verification"
-        content="1hRdCmIfOigEXBSAdegjl-ex4fHy7oWi35_Ar-InMKY"
-      />
+
       {/* Canonical URL */}
       <LinkTag rel="canonical" href={url} />
 

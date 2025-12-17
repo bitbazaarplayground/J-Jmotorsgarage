@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-950 text-gray-300 py-10 md:py-12 border-t border-white/10">
+    <footer className="bg-zinc-950 text-gray-300 pt-10 pb-4 md:pt-12 md:pb-4 border-t border-white/10">
       {/* GRID: 1 col mobile, 2 tablet, 3 desktop */}
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
         {/* BRANDING */}
@@ -70,6 +70,16 @@ export default function Footer() {
       <div className="text-center text-sm text-gray-500 mt-10 border-t border-white/10 pt-6">
         © {new Date().getFullYear()} J&J Motors Garage. Todos los derechos
         reservados.
+      </div>
+
+      <div className="text-center text-xs text-gray-600 mt-3 ">
+        Diseño y desarrollo web por{" "}
+        <a
+          href="mailto:n.traver@hotmail.com?subject=Desarrollo%20web"
+          className="hover:text-primary transition"
+        >
+          BitBazaar
+        </a>
       </div>
     </footer>
   );

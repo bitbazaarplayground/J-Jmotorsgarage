@@ -41,9 +41,9 @@ export default function AvisoLegal() {
               1. Titularidad del sitio web
             </h2>
             <p>
-              Titular: <strong>Juan Olaya Edo</strong>
+              Titular: <strong>j&jmotorsgarage</strong>
               <br />
-              NIF/CIF: <strong>CIF: B24781973</strong>
+              NIF/CIF: <strong>B24781973</strong>
               <br />
               Dirección: Av. de Europa, 217, 12006 Castellón de la Plana, España
               <br />

@@ -42,9 +42,9 @@ export default function Privacidad() {
               1. Responsable del tratamiento
             </h2>
             <p>
-              Responsable: <strong>____________________________</strong>
+              Responsable: <strong>j&jmotorsgarage</strong>
               <br />
-              NIF/CIF: <strong>____________________________</strong>
+              NIF/CIF: <strong>B24781973</strong>
               <br />
               Dirección: Av. de Europa, 217, 12006 Castellón de la Plana
               <br />

@@ -51,6 +51,11 @@ export default function Footer() {
                 Política de Privacidad
               </Link>
             </li>
+            <li className="col-span-2">
+              <Link to="/cookies" className="hover:text-primary transition">
+                Política de Cookies
+              </Link>
+            </li>
           </ul>
         </div>
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { whatsappMessage } from "../utils/whatsappMessage";
 
 export default function Hero() {
-  const whatsappLink = whatsappMessage("mi coche");
+  const whatsappLink = whatsappMessage();
   const heroImage = "/img/hero.jpg";
 
   return (
@@ -48,6 +48,7 @@ export default function Hero() {
             <a
               href={whatsappLink}
               target="_blank"
+              rel="noopener noreferrer"
               className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition text-sm md:text-base text-center"
             >
               Pedir información por WhatsApp
@@ -58,6 +59,13 @@ export default function Hero() {
               className="border border-white/70 px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition text-sm md:text-base text-center"
             >
               Ver servicios
+            </Link>
+
+            <Link
+              to="/ubicacion"
+              className="border border-white/70 px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition text-sm md:text-base text-center"
+            >
+              Cómo llegar
             </Link>
           </div>
 

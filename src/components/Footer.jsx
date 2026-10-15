@@ -41,6 +41,12 @@ export default function Footer() {
             </li>
 
             <li>
+              <Link to="/ubicacion" className="hover:text-primary transition">
+                Ubicación
+              </Link>
+            </li>
+
+            <li>
               <Link to="/aviso-legal" className="hover:text-primary transition">
                 Aviso Legal
               </Link>

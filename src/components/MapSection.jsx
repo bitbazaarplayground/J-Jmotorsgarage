@@ -74,6 +74,7 @@ export default function MapSection() {
               <a
                 href={googleMapsUrl}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-primary px-5 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
               >
                 Ver en Google Maps
@@ -82,6 +83,7 @@ export default function MapSection() {
               <a
                 href={navigateUrl}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="border border-white px-5 py-3 rounded-lg hover:bg-white hover:text-black transition font-semibold"
               >
                 Abrir navegador

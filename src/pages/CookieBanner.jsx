@@ -5,8 +5,11 @@ export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("cookieConsent");
-    if (!consent) setVisible(true);
+    if (localStorage.getItem("cookieConsent")) return undefined;
+
+    const frame = requestAnimationFrame(() => setVisible(true));
+
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const acceptCookies = () => {
@@ -22,7 +25,10 @@ export default function CookieBanner() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 inset-x-0 bg-black border-t border-white/10 p-5 z-50">
+    <aside
+      aria-label="Aviso de cookies"
+      className="fixed bottom-0 inset-x-0 bg-black border-t border-white/10 p-5 z-50"
+    >
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
         <p className="text-sm text-gray-300 max-w-3xl">
           Utilizamos cookies propias y de terceros (Google Analytics) para
@@ -53,6 +59,6 @@ export default function CookieBanner() {
           </button>
         </div>
       </div>
-    </div>
+    </aside>
   );
 }

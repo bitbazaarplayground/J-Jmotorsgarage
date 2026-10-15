@@ -1,5 +1,6 @@
 import { ClockIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import SEO from "../seo/SEO";
@@ -95,6 +96,7 @@ export default function Contacto() {
               <a
                 href={whatsappUrl}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-primary px-5 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
               >
                 WhatsApp
@@ -103,11 +105,19 @@ export default function Contacto() {
               <a
                 href="https://www.google.com/maps?q=Av.+de+Europa,+217"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="border border-white px-5 py-3 rounded-lg hover:bg-white hover:text-black transition font-semibold"
               >
                 Ver en Google Maps
               </a>
             </div>
+
+            <Link
+              to="/ubicacion"
+              className="mt-5 self-start text-sm font-semibold text-primary hover:text-white transition underline underline-offset-4"
+            >
+              Consulta la ubicación y cómo llegar
+            </Link>
           </motion.div>
         </div>
       </section>

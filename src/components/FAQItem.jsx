@@ -1,13 +1,16 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useId, useState } from "react";
 
 export default function FAQItem({ question, answer }) {
   const [open, setOpen] = useState(false);
+  const answerId = useId();
 
   return (
     <div className="border-b border-white/10 py-4">
       <button
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        aria-controls={answerId}
         className="w-full text-left flex justify-between items-center text-white font-medium"
       >
         {question}
@@ -17,6 +20,9 @@ export default function FAQItem({ question, answer }) {
       <AnimatePresence>
         {open && (
           <motion.p
+            id={answerId}
+            role="region"
+            aria-label={question}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

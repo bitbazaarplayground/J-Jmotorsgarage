@@ -1,7 +1,7 @@
 import { Link as LinkTag, Meta, Title } from "react-head";
 
 export default function SEO({ title, description, canonical, image }) {
-  const siteUrl = "https://jjmotorsgarage.es";
+  const siteUrl = "https://www.jjmotorsgarage.es";
   const url = canonical ? siteUrl + canonical : siteUrl;
 
   // Use logo.jpg as the default OG image

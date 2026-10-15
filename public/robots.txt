@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jjmotorsgarage.es/sitemap.xml
+Sitemap: https://www.jjmotorsgarage.es/sitemap.xml

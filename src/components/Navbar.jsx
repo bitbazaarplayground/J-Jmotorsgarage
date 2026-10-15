@@ -87,9 +87,6 @@ export default function Navbar() {
             <Link to="/servicios" className="hover:text-primary transition">
               Servicios
             </Link>
-            <Link to="/ubicacion" className="hover:text-primary transition">
-              Ubicación
-            </Link>
             <Link to="/contacto" className="hover:text-primary transition">
               Contacto
             </Link>
@@ -181,13 +178,6 @@ export default function Navbar() {
                 onClick={closeMobileMenu}
               >
                 Servicios
-              </Link>
-              <Link
-                to="/ubicacion"
-                className="block hover:text-primary"
-                onClick={closeMobileMenu}
-              >
-                Ubicación
               </Link>
               <Link
                 to="/contacto"

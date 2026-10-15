@@ -61,12 +61,6 @@ export default function Hero() {
               Ver servicios
             </Link>
 
-            <Link
-              to="/ubicacion"
-              className="border border-white/70 px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition text-sm md:text-base text-center"
-            >
-              Cómo llegar
-            </Link>
           </div>
 
           <p className="text-xs text-gray-400 mt-4 max-w-[90%] mx-auto md:mx-0">

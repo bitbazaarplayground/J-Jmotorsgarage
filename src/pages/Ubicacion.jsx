@@ -1,6 +1,5 @@
 import { ClockIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import SEO from "../seo/SEO";
@@ -119,12 +118,6 @@ export default function Ubicacion() {
               </a>
             </div>
 
-            <Link
-              to="/servicios"
-              className="mt-5 self-start text-sm font-semibold text-primary hover:text-white transition underline underline-offset-4"
-            >
-              Conoce nuestros servicios de taller
-            </Link>
           </motion.div>
         </div>
       </section>

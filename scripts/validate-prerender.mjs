@@ -131,6 +131,7 @@ for (const route of PUBLIC_PATHS) {
 
   assert(!html.includes("<!--app-head-->"), `${route} still has a head outlet.`);
   assert(!html.includes("<!--app-html-->"), `${route} still has an app outlet.`);
+  assert.match(html, /<html lang="es-ES">/, `${route} must declare Spanish (Spain).`);
   assert.match(html, /<h1[\s>]/, `${route} does not contain rendered page content.`);
   assert.equal(countMatches(html, /<title[\s>]/g), 1, `${route} must have one title.`);
   assert.match(

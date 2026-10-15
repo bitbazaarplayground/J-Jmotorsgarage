@@ -1,4 +1,4 @@
-export function whatsappMessage(service = "") {
+export function whatsappMessage() {
   const base = "https://wa.me/34711207067?text=";
 
   const template = `

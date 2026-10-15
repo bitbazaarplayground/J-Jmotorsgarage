@@ -1,19 +1,62 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { whatsappMessage } from "../utils/whatsappMessage";
 import logo from "/img/logo.jpg";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
+  const menuButtonRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const menuPanelRef = useRef(null);
 
   const whatsappLink = whatsappMessage();
 
-  useEffect(() => {
+  const closeMobileMenu = useCallback(() => {
     setMobileOpen(false);
-  }, [location.pathname]);
+    menuButtonRef.current?.focus();
+  }, []);
+
+  useEffect(() => {
+    if (!mobileOpen) return undefined;
+
+    const focusMenu = requestAnimationFrame(() => {
+      closeButtonRef.current?.focus();
+    });
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        closeMobileMenu();
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusableElements = menuPanelRef.current?.querySelectorAll(
+        'a[href], button:not([disabled])',
+      );
+      if (!focusableElements?.length) return;
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      cancelAnimationFrame(focusMenu);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [closeMobileMenu, mobileOpen]);
 
   return (
     <>
@@ -34,12 +77,18 @@ export default function Navbar() {
           </Link>
 
           {/* DESKTOP NAV */}
-          <div className="hidden md:flex space-x-8 text-white text-sm font-medium">
+          <nav
+            aria-label="Navegación principal"
+            className="hidden md:flex space-x-8 text-white text-sm font-medium"
+          >
             <Link to="/" className="hover:text-primary transition">
               Inicio
             </Link>
             <Link to="/servicios" className="hover:text-primary transition">
               Servicios
+            </Link>
+            <Link to="/ubicacion" className="hover:text-primary transition">
+              Ubicación
             </Link>
             <Link to="/contacto" className="hover:text-primary transition">
               Contacto
@@ -50,12 +99,13 @@ export default function Navbar() {
             >
               Sobre nosotros
             </Link>
-          </div>
+          </nav>
 
           {/* DESKTOP WHATSAPP BUTTON */}
           <a
             href={whatsappLink}
             target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:block bg-primary text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-700 transition text-sm font-semibold"
           >
             WhatsApp
@@ -63,6 +113,11 @@ export default function Navbar() {
 
           {/* MOBILE HAMBURGER ICON */}
           <button
+            ref={menuButtonRef}
+            type="button"
+            aria-label="Abrir menú de navegación"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
             className="md:hidden text-white"
             onClick={() => setMobileOpen(true)}
           >
@@ -79,7 +134,8 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
-            onClick={() => setMobileOpen(false)}
+            onClick={closeMobileMenu}
+            aria-hidden="true"
           ></motion.div>
         )}
       </AnimatePresence>
@@ -93,42 +149,57 @@ export default function Navbar() {
             exit={{ x: "100%" }}
             transition={{ duration: 0.35, ease: "easeOut" }}
             className="fixed top-0 right-0 h-full w-64 bg-zinc-900 text-white p-6 z-50 shadow-xl border-l border-white/10"
+            id="mobile-navigation"
+            ref={menuPanelRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menú de navegación"
           >
             {/* CLOSE BUTTON */}
             <button
-              className="absolute top-4 right-4 text-white"
-              onClick={() => setMobileOpen(false)}
+              ref={closeButtonRef}
+              type="button"
+              aria-label="Cerrar menú de navegación"
+              className="absolute top-4 right-4 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              onClick={closeMobileMenu}
             >
               <XMarkIcon className="h-8 w-8" />
             </button>
 
             {/* MENU LINKS */}
-            <nav className="mt-12 space-y-6 text-lg">
+            <nav aria-label="Navegación móvil" className="mt-12 space-y-6 text-lg">
               <Link
                 to="/"
                 className="block hover:text-primary"
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
               >
                 Inicio
               </Link>
               <Link
                 to="/servicios"
                 className="block hover:text-primary"
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
               >
                 Servicios
               </Link>
               <Link
+                to="/ubicacion"
+                className="block hover:text-primary"
+                onClick={closeMobileMenu}
+              >
+                Ubicación
+              </Link>
+              <Link
                 to="/contacto"
                 className="block hover:text-primary"
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
               >
                 Contacto
               </Link>
               <Link
                 to="/sobre-nosotros"
                 className="block hover:text-primary"
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
               >
                 Sobre nosotros
               </Link>
@@ -138,6 +209,7 @@ export default function Navbar() {
             <a
               href={whatsappLink}
               target="_blank"
+              rel="noopener noreferrer"
               className="block mt-10 bg-primary text-white text-center px-4 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
             >
               WhatsApp

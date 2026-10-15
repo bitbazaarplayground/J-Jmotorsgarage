@@ -102,6 +102,8 @@ export default function Testimonials() {
         {/* ARROWS */}
         <div className="flex justify-center gap-6 mt-10">
           <button
+            type="button"
+            aria-label="Ver opinión anterior"
             onClick={() => handleUserClick(prev)}
             className="p-3 rounded-full border border-white/20 hover:bg-white/10 transition"
           >
@@ -109,6 +111,8 @@ export default function Testimonials() {
           </button>
 
           <button
+            type="button"
+            aria-label="Ver opinión siguiente"
             onClick={() => handleUserClick(next)}
             className="p-3 rounded-full border border-white/20 hover:bg-white/10 transition"
           >

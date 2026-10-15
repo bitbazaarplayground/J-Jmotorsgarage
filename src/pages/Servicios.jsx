@@ -7,6 +7,7 @@ import {
   WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -131,6 +132,30 @@ export default function Servicios() {
               </motion.div>
             );
           })}
+        </div>
+      </section>
+
+      <section className="bg-black py-9 md:py-16 text-white">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-4">¿Necesitas ayuda con tu vehículo?</h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Cuéntanos qué necesitas y te ayudaremos a encontrar el servicio más
+            adecuado. Puedes contactarnos o consultar cómo llegar al taller.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <Link
+              to="/contacto"
+              className="bg-primary px-5 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
+            >
+              Contactar con el taller
+            </Link>
+            <Link
+              to="/ubicacion"
+              className="border border-white px-5 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition"
+            >
+              Ver ubicación y cómo llegar
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -1,18 +1,21 @@
 import { ClockIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import SEO from "../seo/SEO";
 
 export default function Ubicacion() {
-  const embedMap =
-    "https://www.google.com/maps?q=Av.+de+Europa,+217,+12006+Castell%C3%B3n+de+la+Plana,+Castell%C3%B3n&output=embed";
+  const confirmedAddress =
+    "Av.+de+Europa,+217,+12006+Castell%C3%B3+de+la+Plana,+Castell%C3%B3n,+Spain";
 
-  const mapsUrl =
-    "https://www.google.com/maps?q=J%26J+Motors+Garage,+Av.+de+Europa,+217,+12006+Castell%C3%B3n+de+la+Plana,+Castell%C3%B3n";
+  const embedMap =
+    `https://www.google.com/maps?q=${confirmedAddress}&output=embed`;
+
+  const mapsUrl = "https://maps.app.goo.gl/cobSHjEwXnWz5mtq8";
 
   const navigateUrl =
-    "https://www.google.com/maps/dir/?api=1&destination=Av.+de+Europa,+217,+12006+Castell%C3%B3n+de+la+Plana,+Castell%C3%B3n";
+    `https://www.google.com/maps/dir/?api=1&destination=${confirmedAddress}`;
 
   return (
     <>
@@ -100,6 +103,7 @@ export default function Ubicacion() {
               <a
                 href={mapsUrl}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-primary px-5 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
               >
                 Ver en Google Maps
@@ -108,11 +112,19 @@ export default function Ubicacion() {
               <a
                 href={navigateUrl}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="border border-white px-5 py-3 rounded-lg hover:bg-white hover:text-black transition font-semibold"
               >
                 Abrir navegador
               </a>
             </div>
+
+            <Link
+              to="/servicios"
+              className="mt-5 self-start text-sm font-semibold text-primary hover:text-white transition underline underline-offset-4"
+            >
+              Conoce nuestros servicios de taller
+            </Link>
           </motion.div>
         </div>
       </section>

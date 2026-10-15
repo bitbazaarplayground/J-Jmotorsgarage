@@ -5,10 +5,10 @@ export default function LocalBusinessSchema() {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "AutoRepair",
-          "@id": "https://jjmotorsgarage.es/#business",
+          "@id": "https://www.jjmotorsgarage.es/#business",
           name: "J&J Motors Garage",
-          image: "https://jjmotorsgarage.es/og-image.jpg",
-          url: "https://jjmotorsgarage.es",
+          image: "https://www.jjmotorsgarage.es/og-image.jpg",
+          url: "https://www.jjmotorsgarage.es",
           telephone: "+34 711 20 70 67",
           priceRange: "€€",
           address: {

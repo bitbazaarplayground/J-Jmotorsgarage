@@ -2,10 +2,10 @@ export default function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://jjmotorsgarage.es/#organization",
+    "@id": "https://www.jjmotorsgarage.es/#organization",
     name: "J&J Motors Garage",
-    url: "https://jjmotorsgarage.es",
-    logo: "https://jjmotorsgarage.es/logo.jpg",
+    url: "https://www.jjmotorsgarage.es",
+    logo: "https://www.jjmotorsgarage.es/logo.jpg",
     email: "jjmotorsgarage@gmail.com",
     telephone: "+34 711 20 70 67",
 

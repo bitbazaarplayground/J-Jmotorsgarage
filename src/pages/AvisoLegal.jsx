@@ -51,7 +51,7 @@ export default function AvisoLegal() {
               <br />
               Teléfono: +34 711 20 70 67
               <br />
-              Dominio: https://jjmotorsgarage.es
+              Dominio: https://www.jjmotorsgarage.es
             </p>
           </div>
 

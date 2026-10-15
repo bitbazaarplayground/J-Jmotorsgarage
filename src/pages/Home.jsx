@@ -5,7 +5,6 @@ import Navbar from "../components/Navbar";
 import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
 import WhyChooseUs from "../components/WhyChooseUs";
-import LocalBusinessSchema from "../seo/LocalBusinessSchema";
 import OrganizationSchema from "../seo/OrganizationSchema";
 import SEO from "../seo/SEO";
 
@@ -18,7 +17,6 @@ export default function Home() {
         canonical="/"
       />
 
-      <LocalBusinessSchema />
       <OrganizationSchema />
 
       <Navbar />

@@ -7,7 +7,7 @@ export default function LocalBusinessSchema() {
           "@type": "AutoRepair",
           "@id": "https://www.jjmotorsgarage.es/#business",
           name: "J&J Motors Garage",
-          image: "https://www.jjmotorsgarage.es/og-image.jpg",
+          image: "https://www.jjmotorsgarage.es/img/hero.jpg",
           url: "https://www.jjmotorsgarage.es",
           telephone: "+34 711 20 70 67",
           priceRange: "€€",
@@ -35,10 +35,23 @@ export default function LocalBusinessSchema() {
                 "Friday",
               ],
               opens: "08:00",
+              closes: "13:30",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+              ],
+              opens: "15:00",
               closes: "18:00",
             },
+            // Saturday and Sunday are closed, so no opening specification is supplied.
           ],
-          sameAs: ["https://maps.app.goo.gl/BuJ8qJc3qJ2K5gdp8"],
+          sameAs: ["https://maps.app.goo.gl/cobSHjEwXnWz5mtq8"],
           description:
             "Taller mecánico en Castellón especializado en mantenimiento, reparación, frenos, suspensión y diagnosis electrónica.",
           makesOffer: [

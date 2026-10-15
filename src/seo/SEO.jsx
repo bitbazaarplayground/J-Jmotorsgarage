@@ -4,8 +4,8 @@ export default function SEO({ title, description, canonical, image }) {
   const siteUrl = "https://www.jjmotorsgarage.es";
   const url = canonical ? siteUrl + canonical : siteUrl;
 
-  // Use logo.jpg as the default OG image
-  const ogImage = image || `${siteUrl}/logo.jpg`;
+  // Use the repository's logo asset as the default OG image.
+  const ogImage = image || `${siteUrl}/img/logo.jpg`;
 
   return (
     <>

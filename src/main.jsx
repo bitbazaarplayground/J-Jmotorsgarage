@@ -1,6 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { HeadProvider } from "react-head";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
 import { loadGoogleAnalytics } from "./utils/loadGoogleAnalytics";
@@ -12,13 +13,26 @@ const consent = localStorage.getItem("cookieConsent");
 if (consent === "accepted") {
   loadGoogleAnalytics(MEASUREMENT_ID);
 }
-ReactDOM.createRoot(document.getElementById("root")).render(
+
+const app = (
   <React.StrictMode>
     <HeadProvider>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </HeadProvider>
   </React.StrictMode>
 );
+
+const rootElement = document.getElementById("root");
+
+// Vite dev serves the empty shell, while production pages contain prerendered
+// elements. Hydration preserves the static HTML and attaches React behaviour.
+if (rootElement.childElementCount > 0) {
+  hydrateRoot(rootElement, app);
+} else {
+  createRoot(rootElement).render(app);
+}
 
 // const consent = localStorage.getItem("cookieConsent");
 

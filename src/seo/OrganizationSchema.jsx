@@ -5,7 +5,7 @@ export default function OrganizationSchema() {
     "@id": "https://www.jjmotorsgarage.es/#organization",
     name: "J&J Motors Garage",
     url: "https://www.jjmotorsgarage.es",
-    logo: "https://www.jjmotorsgarage.es/logo.jpg",
+    logo: "https://www.jjmotorsgarage.es/img/logo.jpg",
     email: "jjmotorsgarage@gmail.com",
     telephone: "+34 711 20 70 67",
 
@@ -21,7 +21,7 @@ export default function OrganizationSchema() {
     ],
 
     sameAs: [
-      "https://maps.app.goo.gl/BuJ8qJc3qJ2K5gdp8",
+      "https://maps.app.goo.gl/cobSHjEwXnWz5mtq8",
       // Add Instagram, Facebook, TikTok if created later
     ],
 

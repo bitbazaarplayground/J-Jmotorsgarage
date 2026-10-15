@@ -1,6 +1,5 @@
 import { ClockIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import SEO from "../seo/SEO";
@@ -8,6 +7,11 @@ import { whatsappMessage } from "../utils/whatsappMessage";
 
 export default function Contacto() {
   const whatsappUrl = whatsappMessage();
+  const confirmedAddress =
+    "Av.+de+Europa,+217,+12006+Castell%C3%B3+de+la+Plana,+Castell%C3%B3n,+Spain";
+  const embedMap =
+    `https://www.google.com/maps?q=${confirmedAddress}&output=embed`;
+  const mapsUrl = "https://maps.app.goo.gl/cobSHjEwXnWz5mtq8";
 
   return (
     <>
@@ -50,7 +54,7 @@ export default function Contacto() {
             className="rounded-xl overflow-hidden border border-white/10 shadow-xl h-[350px] md:h-[450px]"
           >
             <iframe
-              src="https://www.google.com/maps?q=Av.+de+Europa,+217,+12006+Castell%C3%B3n+de+la+Plana,+Castell%C3%B3n&output=embed"
+              src={embedMap}
               width="100%"
               height="100%"
               loading="lazy"
@@ -103,7 +107,7 @@ export default function Contacto() {
               </a>
 
               <a
-                href="https://www.google.com/maps?q=Av.+de+Europa,+217"
+                href={mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-white px-5 py-3 rounded-lg hover:bg-white hover:text-black transition font-semibold"
@@ -112,12 +116,6 @@ export default function Contacto() {
               </a>
             </div>
 
-            <Link
-              to="/ubicacion"
-              className="mt-5 self-start text-sm font-semibold text-primary hover:text-white transition underline underline-offset-4"
-            >
-              Consulta la ubicación y cómo llegar
-            </Link>
           </motion.div>
         </div>
       </section>

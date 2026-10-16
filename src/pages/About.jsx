@@ -10,7 +10,7 @@ export default function About() {
       <SEO
         title="Sobre Nosotros | Taller Mecánico de Confianza en Castellón | J&J Motors Garage"
         description="Conócenos. Taller mecánico en Castellón con años de experiencia en mantenimiento, reparación y diagnosis electrónica. Honestidad, profesionalidad y pasión por el motor."
-        canonical="/sobre-nosotros"
+        canonical="/sobre-nosotros/"
       />
 
       <Navbar />

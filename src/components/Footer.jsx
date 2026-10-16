@@ -29,30 +29,30 @@ export default function Footer() {
             </li>
 
             <li>
-              <Link to="/contacto" className="hover:text-primary transition">
+              <Link to="/contacto/" className="hover:text-primary transition">
                 Contacto
               </Link>
             </li>
 
             <li>
-              <Link to="/servicios" className="hover:text-primary transition">
+              <Link to="/servicios/" className="hover:text-primary transition">
                 Servicios
               </Link>
             </li>
 
             <li>
-              <Link to="/aviso-legal" className="hover:text-primary transition">
+              <Link to="/aviso-legal/" className="hover:text-primary transition">
                 Aviso Legal
               </Link>
             </li>
 
             <li className="col-span-2">
-              <Link to="/privacidad" className="hover:text-primary transition">
+              <Link to="/privacidad/" className="hover:text-primary transition">
                 Política de Privacidad
               </Link>
             </li>
             <li className="col-span-2">
-              <Link to="/cookies" className="hover:text-primary transition">
+              <Link to="/cookies/" className="hover:text-primary transition">
                 Política de Cookies
               </Link>
             </li>

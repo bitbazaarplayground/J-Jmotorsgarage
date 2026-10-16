@@ -11,13 +11,13 @@ const { PUBLIC_PATHS } = await import(pathToFileURL(serverEntry).href);
 
 const expectedSchemas = new Map([
   ["/", ["AutoRepair", "Organization"]],
-  ["/servicios", ["AutoRepair", "FAQPage"]],
-  ["/contacto", ["AutoRepair"]],
-  ["/ubicacion", ["AutoRepair"]],
-  ["/sobre-nosotros", ["AutoRepair"]],
-  ["/aviso-legal", ["AutoRepair"]],
-  ["/privacidad", ["AutoRepair"]],
-  ["/cookies", ["AutoRepair"]],
+  ["/servicios/", ["AutoRepair", "FAQPage"]],
+  ["/contacto/", ["AutoRepair"]],
+  ["/ubicacion/", ["AutoRepair"]],
+  ["/sobre-nosotros/", ["AutoRepair"]],
+  ["/aviso-legal/", ["AutoRepair"]],
+  ["/privacidad/", ["AutoRepair"]],
+  ["/cookies/", ["AutoRepair"]],
 ]);
 
 const expectedMetadata = new Map([
@@ -30,7 +30,7 @@ const expectedMetadata = new Map([
     },
   ],
   [
-    "/servicios",
+    "/servicios/",
     {
       title:
         "Servicios de Mecánica en Castellón | Frenos, Aceite, Neumáticos y Diagnosis",
@@ -39,7 +39,7 @@ const expectedMetadata = new Map([
     },
   ],
   [
-    "/contacto",
+    "/contacto/",
     {
       title:
         "Contacto | Taller Mecánico en Castellón | WhatsApp, Mapa, Teléfono y Dirección",
@@ -48,7 +48,7 @@ const expectedMetadata = new Map([
     },
   ],
   [
-    "/ubicacion",
+    "/ubicacion/",
     {
       title:
         "Taller Mecánico en Castellón | Ubicación y Cómo Llegar | J&J Motors Garage",
@@ -57,7 +57,7 @@ const expectedMetadata = new Map([
     },
   ],
   [
-    "/sobre-nosotros",
+    "/sobre-nosotros/",
     {
       title:
         "Sobre Nosotros | Taller Mecánico de Confianza en Castellón | J&J Motors Garage",
@@ -66,7 +66,7 @@ const expectedMetadata = new Map([
     },
   ],
   [
-    "/aviso-legal",
+    "/aviso-legal/",
     {
       title: "Aviso Legal | J&J Motors Garage",
       description:
@@ -74,7 +74,7 @@ const expectedMetadata = new Map([
     },
   ],
   [
-    "/privacidad",
+    "/privacidad/",
     {
       title: "Política de Privacidad | J&J Motors Garage",
       description:
@@ -82,7 +82,7 @@ const expectedMetadata = new Map([
     },
   ],
   [
-    "/cookies",
+    "/cookies/",
     {
       title: "Política de Cookies | J&J Motors Garage",
       description: "Política de cookies conforme a la normativa española y RGPD.",
@@ -113,6 +113,14 @@ function escapeHtml(value) {
 const sitemap = await readFile(path.join(projectRoot, "public", "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url);
 const expectedUrls = PUBLIC_PATHS.map((route) => `${siteUrl}${route}`);
+const expectedServiceNames = [
+  "Mantenimiento general",
+  "Cambio de aceite y filtros",
+  "Frenos y suspensión",
+  "Diagnosis electrónica",
+  "Neumáticos y alineación",
+  "Reparaciones de motor",
+];
 
 assert.deepEqual(
   sitemapUrls.sort(),
@@ -169,6 +177,11 @@ for (const route of PUBLIC_PATHS) {
     localBusiness.sameAs,
     ["https://maps.app.goo.gl/cobSHjEwXnWz5mtq8"],
     `${route} has an incorrect business Maps URL.`,
+  );
+  assert.deepEqual(
+    localBusiness.makesOffer.map((service) => service.name),
+    expectedServiceNames,
+    `${route} has an incorrect AutoRepair service list.`,
   );
 
   if (organization) {

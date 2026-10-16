@@ -55,10 +55,12 @@ export default function LocalBusinessSchema() {
           description:
             "Taller mecánico en Castellón especializado en mantenimiento, reparación, frenos, suspensión y diagnosis electrónica.",
           makesOffer: [
-            { "@type": "Service", name: "Mantenimiento completo" },
-            { "@type": "Service", name: "Diagnosis electrónica" },
+            { "@type": "Service", name: "Mantenimiento general" },
+            { "@type": "Service", name: "Cambio de aceite y filtros" },
             { "@type": "Service", name: "Frenos y suspensión" },
-            { "@type": "Service", name: "Reparaciones generales" },
+            { "@type": "Service", name: "Diagnosis electrónica" },
+            { "@type": "Service", name: "Neumáticos y alineación" },
+            { "@type": "Service", name: "Reparaciones de motor" },
           ],
         })}
       </script>

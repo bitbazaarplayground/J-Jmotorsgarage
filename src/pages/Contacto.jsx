@@ -18,7 +18,7 @@ export default function Contacto() {
       <SEO
         title="Contacto | Taller Mecánico en Castellón | WhatsApp, Mapa, Teléfono y Dirección"
         description="Contacta con J&J Motors Garage en Castellón. Teléfono, WhatsApp, horario y dirección. Resolvemos cualquier duda sobre tu vehículo."
-        canonical="/contacto"
+        canonical="/contacto/"
       />
 
       <Navbar />

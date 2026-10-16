@@ -55,7 +55,7 @@ export default function Hero() {
             </a>
 
             <Link
-              to="/servicios"
+              to="/servicios/"
               className="border border-white/70 px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition text-sm md:text-base text-center"
             >
               Ver servicios

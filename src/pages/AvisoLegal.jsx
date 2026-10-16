@@ -9,7 +9,7 @@ export default function AvisoLegal() {
       <SEO
         title="Aviso Legal | J&J Motors Garage"
         description="Aviso legal del sitio web de J&J Motors Garage, taller mecánico en Castellón."
-        canonical="/aviso-legal"
+        canonical="/aviso-legal/"
       />
 
       <Navbar />

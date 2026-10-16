@@ -35,7 +35,7 @@ export default function CookieBanner() {
           analizar el uso de la web. Puedes aceptar o rechazar su uso. Más
           información en nuestra{" "}
           <Link
-            to="/cookies"
+            to="/cookies/"
             className="underline hover:text-primary transition"
           >
             Política de Cookies

@@ -64,7 +64,7 @@ export default function Servicios() {
       <SEO
         title="Servicios de Mecánica en Castellón | Frenos, Aceite, Neumáticos y Diagnosis"
         description="Reparación de frenos, cambio de aceite, suspensión, neumáticos y diagnosis electrónica en Castellón. Mecánicos expertos, servicio rápido y transparente."
-        canonical="/servicios"
+        canonical="/servicios/"
       />
 
       <FAQSchema />

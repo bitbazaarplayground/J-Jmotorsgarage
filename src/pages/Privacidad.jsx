@@ -9,7 +9,7 @@ export default function Privacidad() {
       <SEO
         title="Política de Privacidad | J&J Motors Garage"
         description="Política de privacidad de J&J Motors Garage según el RGPD y LOPDGDD."
-        canonical="/privacidad"
+        canonical="/privacidad/"
       />
 
       <Navbar />

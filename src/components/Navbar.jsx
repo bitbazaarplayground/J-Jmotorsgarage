@@ -84,14 +84,14 @@ export default function Navbar() {
             <Link to="/" className="hover:text-primary transition">
               Inicio
             </Link>
-            <Link to="/servicios" className="hover:text-primary transition">
+            <Link to="/servicios/" className="hover:text-primary transition">
               Servicios
             </Link>
-            <Link to="/contacto" className="hover:text-primary transition">
+            <Link to="/contacto/" className="hover:text-primary transition">
               Contacto
             </Link>
             <Link
-              to="/sobre-nosotros"
+              to="/sobre-nosotros/"
               className="hover:text-primary transition"
             >
               Sobre nosotros
@@ -173,21 +173,21 @@ export default function Navbar() {
                 Inicio
               </Link>
               <Link
-                to="/servicios"
+                to="/servicios/"
                 className="block hover:text-primary"
                 onClick={closeMobileMenu}
               >
                 Servicios
               </Link>
               <Link
-                to="/contacto"
+                to="/contacto/"
                 className="block hover:text-primary"
                 onClick={closeMobileMenu}
               >
                 Contacto
               </Link>
               <Link
-                to="/sobre-nosotros"
+                to="/sobre-nosotros/"
                 className="block hover:text-primary"
                 onClick={closeMobileMenu}
               >

@@ -21,7 +21,7 @@ export default function Ubicacion() {
       <SEO
         title="Taller Mecánico en Castellón | Ubicación y Cómo Llegar | J&J Motors Garage"
         description="Visítanos en Av. de Europa 217, Castellón. Taller de fácil acceso con aparcamiento en la entrada. Cómo llegar, horario y contacto."
-        canonical="/ubicacion"
+        canonical="/ubicacion/"
       />
 
       <Navbar />

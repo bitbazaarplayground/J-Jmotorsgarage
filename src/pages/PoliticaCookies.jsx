@@ -9,7 +9,7 @@ export default function PoliticaCookies() {
       <SEO
         title="Política de Cookies | J&J Motors Garage"
         description="Política de cookies conforme a la normativa española y RGPD."
-        canonical="/cookies"
+        canonical="/cookies/"
       />
 
       <Navbar />
